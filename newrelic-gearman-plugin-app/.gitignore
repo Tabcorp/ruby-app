@@ -1,0 +1,5 @@
+newrelic-gearman-plugin
+*.tar.gz
+packaging/vendor
+packaging/*.tar.gz
+
