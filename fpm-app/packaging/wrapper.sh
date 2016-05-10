@@ -10,4 +10,4 @@ export BUNDLE_GEMFILE="$SELFDIR/lib/vendor/Gemfile"
 unset BUNDLE_IGNORE_CONFIG
 
 # Run the actual app using the bundled Ruby interpreter, with Bundler activated.
-exec "$SELFDIR/lib/ruby/bin/ruby" -rbundler/setup "$SELFDIR/lib/vendor/ruby/2.1.0/gems/fpm-1.5.0/bin/fpm"
+exec "$SELFDIR/lib/ruby/bin/ruby" -rbundler/setup "$SELFDIR/lib/vendor/ruby/2.1.0/gems/fpm-1.4.0/bin/fpm"
