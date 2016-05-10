@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+
+gem "ffi", "1.9.6"
+gem "json", "1.8.2"
+gem 'fpm', "1.4.0"
+
