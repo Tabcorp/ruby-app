@@ -5,6 +5,8 @@ Self-contained ruby apps build script with [Traveling Ruby](http://phusion.githu
 ## Supported App List
 
 * [NewRelic Gearman Plugin](https://github.com/channelgrabber/newrelic-gearman-plugin)
+* [fpm](https://github.com/jordansissel/fpm)
+  * NOTE: due to [this Cent OS bug](https://github.com/jordansissel/fpm/issues/1090#issuecomment-211313877) we can only use fpm 1.4.0 on linux
 
 ## Usage Example
 
