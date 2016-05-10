@@ -2,6 +2,7 @@
 require 'bundler/setup'
 
 PACKAGE_NAME = "newrelic-gearman-plugin"
+SOURCE_URL = "https://github.com/channelgrabber/newrelic-gearman-plugin"
 VERSION = "0.2.0"
 TRAVELING_RUBY_VERSION = "20150715-2.1.6"
 EXECUTABLE_FILE = "newrelic_gearman_agent"
@@ -32,7 +33,7 @@ namespace :package do
     if Dir.exists?(PACKAGE_NAME)
       sh "cd #{PACKAGE_NAME} && git pull"
     else
-      sh "git clone https://github.com/channelgrabber/newrelic-gearman-plugin"
+      sh "git clone #{SOURCE_URL}"
     end
   end
 
@@ -42,8 +43,9 @@ namespace :package do
       abort "You can only 'bundle install' using Ruby 2.1, because that's what Traveling Ruby uses."
     end
     sh "rm -rf packaging/tmp"
-    sh "mkdir packaging/tmp"
-    sh "cp #{PACKAGE_NAME}/{Gemfile,Gemfile.lock} packaging/tmp/"
+    sh "mkdir -p packaging/tmp"
+    sh "cp #{PACKAGE_NAME}/Gemfile packaging/tmp/"
+    sh "cp #{PACKAGE_NAME}/Gemfile.lock packaging/tmp/"
     Bundler.with_clean_env do
       sh "cd packaging/tmp && env BUNDLE_IGNORE_CONFIG=1 bundle install --path ../vendor --without development"
     end
